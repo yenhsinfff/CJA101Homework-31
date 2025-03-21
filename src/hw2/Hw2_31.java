@@ -43,7 +43,7 @@ public class Hw2_31 {
 //		輸出結果為阿文可以選擇的數字有哪些？總共有幾個？
 		
 		System.out.print("可選擇的數字:");
-		int count2 = 1;
+		int count2 = 0;
 		for (int num = 1; num <= 49; num++) {
 			if(num % 10 == 4 || num / 10 == 4) {
 			continue;
