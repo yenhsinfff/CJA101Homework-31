@@ -91,21 +91,22 @@ public class Hw4_31 {
 //	(提示3：擋下錯誤輸入：例如月份輸入為2，則日期不該超過29)
 		
 		System.out.println("請輸入三個整數");
+
 		int year = sc.nextInt();
 		int month = sc.nextInt();
 		int day = sc.nextInt();
 
 		int normal[] = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 		int leap[] = { 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+
 		
-		
-		if (month >= 1 || month <= 12) {
+		if (month >= 1 && month <= 12) {
 			if (year % 4 == 0 && year % 100 != 0) {
 				if (day > leap[month - 1]) {
 					System.out.println("錯誤輸入");
 					return;
 				}
-			} else if (year % 4 == 0 && year % 100 == 0 && year % 400 == 0) {
+			} else if (year % 400 == 0) {
 				if (day > leap[month - 1]) {
 					System.out.println("錯誤輸入");
 					return;
@@ -124,8 +125,8 @@ public class Hw4_31 {
 		
 		LocalDate date = LocalDate.of(year, month, day);
 		int dayOfYear = date.getDayOfYear();
-		System.out.println("輸入的日期為該年第"+ dayOfYear + "天");
-
+		System.out.println("輸入的日期為該年第"+ dayOfYear + "天");	
+		
 		System.out.println("===========");
 //		班上有8位同學，他們進行了6次考試結果如下：
 //		請算出每位同學考最高分的次數
@@ -167,5 +168,6 @@ public class Hw4_31 {
 		}	
 		sc.close();
 	}
+	
 
-}
+	}
